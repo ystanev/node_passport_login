@@ -14,7 +14,9 @@ require('./config/passport')(passport);
 const db = require('./config/keys').MongoURI;
 
 //Connect to Mongo
-mongoose.connect(db, { useNewUrlParser: true })
+mongoose.connect(db, {
+        useNewUrlParser: true
+    })
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log());
 
@@ -23,7 +25,9 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 //Bodyparser
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({
+    extended: false
+}))
 
 //Express Session
 app.use(session({
